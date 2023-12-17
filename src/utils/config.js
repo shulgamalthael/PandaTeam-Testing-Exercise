@@ -1,4 +1,6 @@
 export default {
+	/* Не нашел на https://api.openweathermap.org апи по получению почасовой погоды */
+	
 	API_KEY: "24629a8e1d52d54a6084e06f4623facf",
 	BASE_API_URL: "https://api.openweathermap.org",
 	WEATHER_API_URL: "https://api.weatherapi.com",
