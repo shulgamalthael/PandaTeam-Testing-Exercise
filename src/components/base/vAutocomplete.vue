@@ -172,7 +172,7 @@
 
 	.input-panel {
 		z-index: 2;
-		width: min-content;
+		width: max-content;
 		position: absolute;
 		background-color: #41b883;
 		max-width: 360px;
