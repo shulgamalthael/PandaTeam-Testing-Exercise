@@ -92,7 +92,23 @@
 		background-color: #35495e90;
 	}
 
+	.modal-buttons__button:first-child {
+		margin-right: 5px;
+	}
+
 	.modal-buttons__button:hover {
 		background-color: #35495e;
+	}
+
+	@media screen and (min-width: 360px) and (max-width: 799px) {
+		.modal {
+			width: 360px;
+		}
+	}
+
+	@media screen and (min-width: 1px) and (max-width: 359px) {
+		.modal {
+			width: 100%;
+		}
 	}
 </style>

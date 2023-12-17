@@ -51,21 +51,6 @@
 	const canSearch = ref(false);
 	const canShowSuggestions = ref(false);
 
-	watch(suggestions, () => {
-		if(suggestions.value) {
-			canShowSuggestions.value = true;
-		} else {
-			canShowSuggestions.value = false;
-		}
-	});
-
-	watch(canSearch, async () => {
-		if(canSearch.value && modelValue.value) {
-			await emit('complete');
-			canShowSuggestions.value = true;
-		}
-	})
-
 	const inputHandler = (event) => {
 		canSearch.value = false;
 		clearTimeout(timeoutId);
@@ -80,7 +65,7 @@
 		if(modelValue.value) {
 			canShowSuggestions.value = true;
 		}
-	}
+	};
 
 	const suggestionClickHandler = (suggestion) => {
 		emit('update-suggestion', suggestion);
@@ -107,7 +92,22 @@
 			canShowSuggestions.value = false;
 		}
 		// autocomplete
-	}
+	};
+
+	watch(suggestions, () => {
+		if(suggestions.value) {
+			canShowSuggestions.value = true;
+		} else {
+			canShowSuggestions.value = false;
+		}
+	});
+
+	watch(canSearch, async () => {
+		if(canSearch.value && modelValue.value) {
+			await emit('complete');
+			canShowSuggestions.value = true;
+		}
+	});
 
 	onMounted(() => {
 		window.addEventListener('click', checkTarget)
@@ -122,8 +122,8 @@
 
 <style scoped>
 	.autocomplete {
+		width: 100%;
 		position: relative;
-		width: max-content;
 	}
 
 	.container {
@@ -158,6 +158,7 @@
 	}
 
 	.input {
+		width: 100%;
 		border-radius: 15px;
 		padding: 5px 15px;
 		color: #41b883;
@@ -171,8 +172,8 @@
 
 	.input-panel {
 		z-index: 2;
+		width: min-content;
 		position: absolute;
-		min-width: 100%;
 		background-color: #41b883;
 		max-width: 360px;
 		padding: 5px;

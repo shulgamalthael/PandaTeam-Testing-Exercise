@@ -260,6 +260,9 @@
 		padding: 5px 15px;
 		border-radius: 5px;
 		margin-left: 15px;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		text-wrap: nowrap;
 		border: 1px solid var(--secondary-color);
 		background-color: #41b88390;
 	}
@@ -279,6 +282,9 @@
 		font-weight: 700;
 		border-radius: 5px;
 		cursor: pointer;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		text-wrap: nowrap;
 		border: 1px solid var(--secondary-color);
 		background-color: #41b88390;
 	}
@@ -299,19 +305,25 @@
 		margin-left: 5px;
 	}
 
-	@media screen and (min-width: 1px) and (max-width: 799px) {
+	@media screen and (min-width: 1px) and (max-width: 800px) {
 		.card-header {
 			flex-direction: column;
 		}
 
 		.card-header-buttons {
-			margin: 5px 0;
+			margin-top: 5px;
 			justify-content: space-between;
 		}
 
 		.card-header-autocomplete {
 			display: flex;
 			justify-content: center;
+			width: 100%;
+		}
+
+		.card-header-buttons__button:first-child {
+			margin-right: auto;
+			margin-left: 0px;
 		}
 	}
 </style>

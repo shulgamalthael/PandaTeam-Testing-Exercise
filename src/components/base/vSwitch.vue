@@ -1,7 +1,7 @@
 <template>
 	<div class="switch">
 		<slot name="before"></slot>
-		<div @click="trackClickHandler" class="switch-track">
+		<div @click="emit('change-value')" class="switch-track">
 			<div class="switch-ball" :class="{'switch-ball__active': !!props.value}"></div>
 		</div>
 		<slot name="after"></slot>
@@ -16,10 +16,6 @@
 	});
 
 	const emit = defineEmits(['change-value']);
-
-	const trackClickHandler = () => {
-		emit('change-value');
-	}
 </script>
 
 <style scoped>
