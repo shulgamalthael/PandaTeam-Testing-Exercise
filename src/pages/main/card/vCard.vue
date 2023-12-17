@@ -64,7 +64,7 @@
 			>
 				{{ weekButtonTitle }}
 			</div>
-			<div style="margin-left: 5px;">
+			<div class="card-day-switch">
 				<v-switch
 					:value="dayMode === 'night'"
 					@change-value="changeDayMode"
@@ -301,6 +301,10 @@
 		background-color: #35495e90;
 	}
 
+	.card-day-switch {
+		margin-left: 5px;
+	}
+
 	.card-subheader__button-with-margin {
 		margin-left: 5px;
 	}
@@ -324,6 +328,10 @@
 		.card-header-buttons__button:first-child {
 			margin-right: auto;
 			margin-left: 0px;
+		}
+
+		.card-day-switch {
+			margin-left: auto;
 		}
 	}
 </style>
