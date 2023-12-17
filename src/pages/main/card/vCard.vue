@@ -27,7 +27,7 @@
 				</div>
 				<div 
 					v-if="props.card.isSelected && !props.isSelectedPage"
-					@click="removeFromSelectedCards"
+					@click="removeSelectedCard(card)"
 					class="card-header-buttons__button"
 				>
 					{{ removeFromSelectedTitle }}
@@ -104,7 +104,7 @@
 	import { ref, defineProps, defineEmits, onMounted } from 'vue';
 
 	/* store */
-	import { mapMutations } from '@/store/storeLib';
+	import { mapActions, mapMutations } from '@/store/storeLib';
 
 	/* use */
 	import { useLanguage } from '@/use/useLanguage';
@@ -123,6 +123,7 @@
 	const emit = defineEmits(['remove-card', 'add-to-selected', 'update-cards-list']);
 
 	/* store */
+	const { removeSelectedCard } = mapActions();
 	const { updateCardById, setSelectedCardsList } = mapMutations();
 
 	/* refs */
