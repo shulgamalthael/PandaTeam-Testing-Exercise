@@ -1,4 +1,13 @@
-import { createApp } from 'vue'
-import App from './App.vue'
+import { createApp } from 'vue';
+import App from './App.vue';
+import store from "./store/store";
+import PrimeVue from "primevue/config";
+// import { initAxios } from './utils/axios';
 
-createApp(App).mount('#app')
+// initAxios();
+
+const app = createApp(App);
+app.use(store);
+app.use(PrimeVue);
+
+app.mount('#app');
